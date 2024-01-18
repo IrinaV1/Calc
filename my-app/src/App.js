@@ -13,7 +13,7 @@ setResult('')
 }
 
 const backspace = () => {
-
+setResult(result.slice(0))
 }
   return (
     <div className="container">
@@ -38,7 +38,7 @@ const backspace = () => {
       <button name="+" onClick={handleClick}>+</button>
       <button name="0" onClick={handleClick}>0</button>
       <button name="." onClick={handleClick}>.</button>
-      <button  onClick={handleClick}>=</button>
+      <button onClick={handleClick} id="result">=</button>
 
     </div>
 
