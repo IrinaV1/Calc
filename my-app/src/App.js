@@ -13,13 +13,23 @@ setResult('')
 }
 
 const backspace = () => {
-setResult(result.slice(0))
+setResult(result.slice(0, -1))
+}
+
+const calculateResult = () => {
+  try {
+    setResult(eval(result).toString());
+  } catch (error) {
+    setResult('Error');
+  }
+  
 }
   return (
     <div className="container">
       <form>
         <input type="text" value={result}/>
       </form>
+    
     <div className="keypad"> 
       <button onClick={clear} id="clear">Clear</button>
       <button onClick={backspace} id="backspace">C</button>
@@ -38,7 +48,7 @@ setResult(result.slice(0))
       <button name="+" onClick={handleClick}>+</button>
       <button name="0" onClick={handleClick}>0</button>
       <button name="." onClick={handleClick}>.</button>
-      <button onClick={handleClick} id="result">=</button>
+      <button onClick={calculateResult} id="result">=</button>
 
     </div>
 
